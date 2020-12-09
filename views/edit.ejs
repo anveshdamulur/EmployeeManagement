@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <style>
+        body{
+            background-color:#DCE1E3;
+        }
+        input[type=text],
+        select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #004E7C;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input, select, textarea{
+    color: #004E7C;
+}
+input:focus, select:focus {
+    color: #004E7C;
+}
+        input[type=submit] {
+            border-radius: 12px;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+        
+
+    .form{
+        margin-top: 2%;
+        /* border: 3px solid yellow; */
+        padding-top: 5%;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+        </style>
+    </head>
+    <body>
+        <div class="form">
+            <h1>Edit <%= data.name %> details...</h1>
+            <form action='/edit/' method="POST" id="frmData" >
+                <input type="hidden" name='id' value="<%=data._id %>">
+                <label for="edtName">Name : </label>
+                <input type="text" id="fltName" name="edtName" value="<%=data.name %>"><br>
+                <label for="edtEmail">Email Id:</label>
+                <input type="text" id="fltEmail" name="edtEmail" value="<%=data.email %>"><br>
+                <label for="edtEtype">Employee Type : </label>
+                <input type="text" name="edtEtype" value="<%=data.etype %>"><br>
+                <label for="edtHourRate">Hour Rate : </label>
+                <input type="text" name="edtHourRate" value="<%=data.hourlyRate %>"><br>
+                <label for="edtTotalHour">Total Hours: </label>
+                <input type="text" name="edtTotalHour" value="<%=data.totalHour %>"><br>
+                <input type="submit" value="Edit">
+            </form>
+        </div>
+
+    </body>
+</html>

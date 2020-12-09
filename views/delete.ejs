@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:#DCE1E3;
+        }
+        .delForm{
+            
+            margin-left: 100px;
+            margin-right: 100px;
+
+        }
+        .delForm form{
+            width: 70%;
+            padding: 10%;
+        }
+        #parentDel{
+           
+            display: flex;
+            flex-direction: row;
+            /* border: 3px solid red; */
+            border-radius: 20px;
+       
+            padding: 5%;
+            background-color:white;
+
+        }
+        #childDelOne{
+            /* border: 3px solid black; */
+            width: 100%;
+            padding: 10px;
+        }
+        /* #childDelTwo{
+            border: 3px solid black;
+            width: 50%;
+            padding: 10px;
+        } */
+        h1 span{
+            font-family: 'Times New Roman', Times, serif;
+           
+            color: red;
+        }
+        p{
+            font-family: 'Times New Roman', Times, serif;
+            color: rgb(14, 21, 126);
+            font-size: x-large;
+        }
+        #color{
+            
+            font-family: 'Times New Roman', Times, serif;
+            color: red;
+            font-size: large;
+        }
+        #safe{
+            font-family: 'Times New Roman', Times, serif;
+            color: green;
+            font-size: large;
+        }
+    </style>
+</head>
+
+<body class="delForm">
+    <form action="/delete/" method="post">
+        
+        <input type="hidden" name ='id' value='<%=data._id%>'>
+        <h1>Delete Account: <span><%= data.name %></span></h1>
+        <div  id='parentDel'>
+            
+            <div id="childDelOne">
+                <p>Are you sure want to delete this Account? If you delete your account, you will permanently loss your information. </p>
+                <button ><a href="/" id="safe">Dont Delete</a></button>
+                <input type="submit" value="Delete" id="color">
+            </div>
+        </div>
+       
+    
+    </form>
+</body> 
+
+</html>
